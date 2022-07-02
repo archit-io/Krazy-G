@@ -1,4 +1,4 @@
-export default {
+module.exports = { //here we're not using export default because nodejs uses commonjs
     products: [
       {
         _id: '1',

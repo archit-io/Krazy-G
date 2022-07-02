@@ -1,0 +1,23 @@
+{
+  "name": "ecomm-js-node-mongodb",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node backend/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/archit-io/E-Mart.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/archit-io/E-Mart/issues"
+  },
+  "homepage": "https://github.com/archit-io/E-Mart#readme",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
+}
