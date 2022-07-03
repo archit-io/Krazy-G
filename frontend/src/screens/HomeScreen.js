@@ -1,17 +1,19 @@
 import axios from 'axios'
+import Rating from '../components/Rating';
+
 const HomeScreen = {
-  render: async () => { //async added
-    //const { products } = data; removed since data is being fetched from the backend now
+  render: async () => { // async added
+    // const { products } = data; removed since data is being fetched from the backend now
     const response = await axios({
-      url: 'http://localhost:5000/api/products', //axios specific change
+      url: 'http://localhost:5000/api/products', // axios specific change
       headers: {
         'Content-Type': 'application/json',
       },
     });
-    if (!response || response.statusText !== 'OK') {  //axios specific change
+    if (!response || response.statusText !== 'OK') {  // axios specific change
       return `<div>Error in getting data</div>`;
     }
-    const products = response.data;  //axios specific change
+    const products = response.data;  // axios specific change
 
     return `
     <ul class="products">
@@ -27,6 +29,12 @@ const HomeScreen = {
           <a href="/#/product/1">
             ${product.name}
           </a>
+        </div>
+        <div class="product-rating"> //product rating added
+          ${Rating.render({
+            value: product.rating,
+            text: `${product.numReviews} reviews`,
+          })}
         </div>
         <div class="product-brand">
           ${product.brand}
