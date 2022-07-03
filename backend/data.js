@@ -1,4 +1,4 @@
-module.exports = { //here we're not using export default because nodejs uses commonjs
+export default { //module.export again converted to export default after installing babel transpiler
     products: [
       {
         _id: '1',

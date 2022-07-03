@@ -1,6 +1,6 @@
-const express = require('express');
-const cors =  require("cors");
-const data = require('./data.js');
+import express from 'express'; //require converted to import after installing babel transpiler
+import cors from 'cors';
+import data from './data.js';
 const app = express();
 
 app.use(cors());
