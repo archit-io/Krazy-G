@@ -1,16 +1,18 @@
+import axios from 'axios'
 const HomeScreen = {
   render: async () => { //async added
     //const { products } = data; removed since data is being fetched from the backend now
-    const response = await fetch('http://localhost:5000/api/products', {
+    const response = await axios({
+      url: 'http://localhost:5000/api/products', //axios specific change
       headers: {
         'Content-Type': 'application/json',
       },
     });
-    if (!response || !response.ok) {
+    if (!response || response.statusText !== 'OK') {  //axios specific change
       return `<div>Error in getting data</div>`;
     }
-    const products = await response.json();
-    
+    const products = response.data;  //axios specific change
+
     return `
     <ul class="products">
       ${products
