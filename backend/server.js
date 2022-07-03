@@ -1,6 +1,7 @@
-import express from 'express'; //require converted to import after installing babel transpiler
+import express from 'express'; // require converted to import after installing babel transpiler
 import cors from 'cors';
 import data from './data.js';
+
 const app = express();
 
 app.use(cors());
