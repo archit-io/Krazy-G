@@ -1,12 +1,14 @@
+/* eslint-disable import/extensions */
 import HomeScreen from './screens/HomeScreen.js';
 import ProductScreen from './screens/ProductScreen.js';
 import { parseRequestUrl } from './utils.js';
 import Error404Screen from './screens/Error404Screen.js';
+
 const routes = {
   '/': HomeScreen,
   '/product/:id': ProductScreen,
 };
-const router = async () => { //async added since data is now being fetched from the backend
+const router = async () => { // async added since data is now being fetched from the backend
   const request = parseRequestUrl();
   const parseUrl =
     (request.resource ? `/${request.resource}` : '/') +
@@ -16,6 +18,7 @@ const router = async () => { //async added since data is now being fetched from 
 
   const main = document.getElementById('main-container');
   main.innerHTML = await screen.render();
+  await screen.after_render(); // 15 added for product screen action
 };
 window.addEventListener('load', router);
 window.addEventListener('hashchange', router);
