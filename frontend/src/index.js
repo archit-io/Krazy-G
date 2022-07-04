@@ -7,6 +7,7 @@ import CartScreen from './screens/CartScreen';
 import SigninScreen from './screens/SigninScreen.js';
 import Header from './components/Header.js';
 import RegisterScreen from './screens/RegisterScreen.js';
+import ProfileScreen from './screens/ProfileScreen.js';
 
 const routes = {
   '/': HomeScreen,
@@ -15,6 +16,7 @@ const routes = {
   '/cart': CartScreen,
   '/signin': SigninScreen,
   '/register': RegisterScreen,
+  '/profile': ProfileScreen,
 };
 const router = async () => { // async added since data is now being fetched from the backend
   showLoading();
@@ -31,7 +33,7 @@ const router = async () => { // async added since data is now being fetched from
 
   const main = document.getElementById('main-container');
   main.innerHTML = await screen.render();
-  await screen.after_render(); // added for 12-Product-Screen-Action
+  if(screen.after_render()) await screen.after_render(); // added for 12-Product-Screen-Action
   hideLoading();
 };
 window.addEventListener('load', router);

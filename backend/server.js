@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable import/extensions */
 import express from 'express'; // require converted to import after installing babel transpiler
 import cors from 'cors';
