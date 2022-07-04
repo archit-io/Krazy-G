@@ -3,10 +3,13 @@ import HomeScreen from './screens/HomeScreen.js';
 import ProductScreen from './screens/ProductScreen.js';
 import { parseRequestUrl } from './utils.js';
 import Error404Screen from './screens/Error404Screen.js';
+import CartScreen from './screens/CartScreen';
 
 const routes = {
   '/': HomeScreen,
   '/product/:id': ProductScreen,
+  '/cart/:id': CartScreen, // Added while implementing 13-Add-To-Cart-Action
+  '/cart': CartScreen,
 };
 const router = async () => { // async added since data is now being fetched from the backend
   const request = parseRequestUrl();
@@ -18,7 +21,7 @@ const router = async () => { // async added since data is now being fetched from
 
   const main = document.getElementById('main-container');
   main.innerHTML = await screen.render();
-  await screen.after_render(); // 15 added for product screen action
+  await screen.after_render(); // added for 12-Product-Screen-Action
 };
 window.addEventListener('load', router);
 window.addEventListener('hashchange', router);
