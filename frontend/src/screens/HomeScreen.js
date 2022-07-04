@@ -1,15 +1,18 @@
 import axios from 'axios'
 import Rating from '../components/Rating';
+import { hideLoading, showLoading } from '../utils';
 
 const HomeScreen = {
   render: async () => { // async added
     // const { products } = data; removed since data is being fetched from the backend now
-    const response = await axios({
+    showLoading()
+    const response = await axios({      
       url: 'http://localhost:5000/api/products', // axios specific change
       headers: {
         'Content-Type': 'application/json',
       },
     });
+    hideLoading()
     if (!response || response.statusText !== 'OK') {  // axios specific change
       return `<div>Error in getting data</div>`;
     }

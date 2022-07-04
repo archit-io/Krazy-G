@@ -1,6 +1,6 @@
 /* eslint-disable no-undef */
 
-import { parseRequestUrl } from '../utils';
+import { hideLoading, parseRequestUrl, showLoading } from '../utils';
 import { getProduct } from '../api';
 import Rating from '../components/Rating';
 
@@ -14,12 +14,13 @@ const ProductScreen = {
   },
 
   render: async () => {
+    showLoading()
     const request = parseRequestUrl();
     const product = await getProduct(request.id);
     if (product.error) {
       return `<div>${product.error}</div>`;
     }
-
+    hideLoading()
     // whole product details component is returned now, so it's not a page but a dynamically returned component
     return `
     <div class="content">
