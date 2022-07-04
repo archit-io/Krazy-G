@@ -1,24 +1,28 @@
 /* eslint-disable import/extensions */
-import HomeScreen from './screens/HomeScreen.js';
-import ProductScreen from './screens/ProductScreen.js';
-import { hideLoading, parseRequestUrl, showLoading } from './utils.js';
-import Error404Screen from './screens/Error404Screen.js';
+import HomeScreen from './screens/HomeScreen';
+import ProductScreen from './screens/ProductScreen';
+import { parseRequestUrl, showLoading, hideLoading } from './utils';
+import Error404Screen from './screens/Error404Screen';
 import CartScreen from './screens/CartScreen';
-import SigninScreen from './screens/SigninScreen.js';
-import Header from './components/Header.js';
-import RegisterScreen from './screens/RegisterScreen.js';
-import ProfileScreen from './screens/ProfileScreen.js';
+import SigninScreen from './screens/SigninScreen';
+import Header from './components/Header';
+import RegisterScreen from './screens/RegisterScreen';
+import ProfileScreen from './screens/ProfileScreen';
+import ShippingScreen from './screens/ShippingScreen';
+import PaymentScreen from './screens/PaymentScreen';
 
 const routes = {
   '/': HomeScreen,
   '/product/:id': ProductScreen,
-  '/cart/:id': CartScreen, // Added while implementing 13-Add-To-Cart-Action
+  '/cart/:id': CartScreen,
   '/cart': CartScreen,
   '/signin': SigninScreen,
   '/register': RegisterScreen,
   '/profile': ProfileScreen,
+  '/shipping': ShippingScreen,
+  '/payment': PaymentScreen,
 };
-const router = async () => { // async added since data is now being fetched from the backend
+const router = async () => {
   showLoading();
   const request = parseRequestUrl();
   const parseUrl =
@@ -26,14 +30,12 @@ const router = async () => { // async added since data is now being fetched from
     (request.id ? '/:id' : '') +
     (request.verb ? `/${request.verb}` : '');
   const screen = routes[parseUrl] ? routes[parseUrl] : Error404Screen;
-
   const header = document.getElementById('header-container');
   header.innerHTML = await Header.render();
   await Header.after_render();
-
   const main = document.getElementById('main-container');
   main.innerHTML = await screen.render();
-  if(screen.after_render()) await screen.after_render(); // added for 12-Product-Screen-Action
+  if (screen.after_render) await screen.after_render();
   hideLoading();
 };
 window.addEventListener('load', router);
