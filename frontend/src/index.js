@@ -4,12 +4,14 @@ import ProductScreen from './screens/ProductScreen.js';
 import { parseRequestUrl } from './utils.js';
 import Error404Screen from './screens/Error404Screen.js';
 import CartScreen from './screens/CartScreen';
+import SigninScreen from './screens/SigninScreen.js';
 
 const routes = {
   '/': HomeScreen,
   '/product/:id': ProductScreen,
   '/cart/:id': CartScreen, // Added while implementing 13-Add-To-Cart-Action
   '/cart': CartScreen,
+  '/signin': SigninScreen,
 };
 const router = async () => { // async added since data is now being fetched from the backend
   const request = parseRequestUrl();
