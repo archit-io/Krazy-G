@@ -1,6 +1,6 @@
-/* eslint-disable no-alert */
 import { signin } from '../api';
 import { getUserInfo, setUserInfo } from '../localStorage';
+import { showLoading, hideLoading, showMessage } from '../utils';
 
 const SigninScreen = {
   after_render: () => {
@@ -8,12 +8,14 @@ const SigninScreen = {
       .getElementById('signin-form')
       .addEventListener('submit', async (e) => {
         e.preventDefault();
+        showLoading();
         const data = await signin({
           email: document.getElementById('email').value,
           password: document.getElementById('password').value,
         });
+        hideLoading();
         if (data.error) {
-          alert(data.error);
+          showMessage(data.error);
         } else {
           setUserInfo(data);
           document.location.hash = '/';
