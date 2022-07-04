@@ -1,11 +1,34 @@
 // Added while implementing 13-Add-To-Cart-Action
 
 export const getCartItems = () => {
-    const cartItems = localStorage.getItem('cartItems')
-      ? JSON.parse(localStorage.getItem('cartItems'))
-      : [];
-    return cartItems;
-  };
-  export const setCartItems = (cartItems) => {
-    localStorage.setItem('cartItems', JSON.stringify(cartItems));
-  };
+  const cartItems = localStorage.getItem('cartItems')
+    ? JSON.parse(localStorage.getItem('cartItems'))
+    : [];
+  return cartItems;
+};
+export const setCartItems = (cartItems) => {
+  localStorage.setItem('cartItems', JSON.stringify(cartItems));
+};
+export const setUserInfo = ({
+  _id = '',
+  name = '',
+  email = '',
+  password = '',
+  token = '',
+  isAdmin = false,
+}) => {
+  localStorage.setItem(
+    'userInfo',
+    JSON.stringify({
+      _id,
+      name,
+      email,
+      password,
+      token,
+      isAdmin,
+    })
+  );
+};
+export const getUserInfo = () => localStorage.getItem('userInfo')
+    ? JSON.parse(localStorage.getItem('userInfo'))
+    : { name: '', email: '', password: '' };
