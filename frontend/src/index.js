@@ -6,6 +6,7 @@ import Error404Screen from './screens/Error404Screen.js';
 import CartScreen from './screens/CartScreen';
 import SigninScreen from './screens/SigninScreen.js';
 import Header from './components/Header.js';
+import RegisterScreen from './screens/RegisterScreen.js';
 
 const routes = {
   '/': HomeScreen,
@@ -13,6 +14,7 @@ const routes = {
   '/cart/:id': CartScreen, // Added while implementing 13-Add-To-Cart-Action
   '/cart': CartScreen,
   '/signin': SigninScreen,
+  '/register': RegisterScreen,
 };
 const router = async () => { // async added since data is now being fetched from the backend
   showLoading();
