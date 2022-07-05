@@ -1,22 +1,14 @@
-import axios from 'axios'
+/* eslint-disable no-unused-vars */
+import axios from 'axios';
 import Rating from '../components/Rating';
-import { hideLoading, showLoading } from '../utils';
+import { getProducts } from '../api';
 
 const HomeScreen = {
-  render: async () => { // async added
-    // const { products } = data; removed since data is being fetched from the backend now
-    showLoading()
-    const response = await axios({      
-      url: 'http://localhost:5000/api/products', // axios specific change
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    });
-    hideLoading()
-    if (!response || response.statusText !== 'OK') {  // axios specific change
-      return `<div>Error in getting data</div>`;
+  render: async () => {
+    const products = await getProducts();
+    if (products.error) {
+      return `<div class="error">${products.error}</div>`;
     }
-    const products = response.data;  // axios specific change
 
     return `
     <ul class="products">
@@ -33,7 +25,7 @@ const HomeScreen = {
             ${product.name}
           </a>
         </div>
-        <div class="product-rating"> //product rating added
+        <div class="product-rating">
           ${Rating.render({
             value: product.rating,
             text: `${product.numReviews} reviews`,
