@@ -46,7 +46,6 @@ export const signin = async ({ email, password }) => {
     return { error: err.response.data.message || err.message };
   }
 };
-
 export const register = async ({ name, email, password }) => {
   try {
     const response = await axios({
@@ -70,7 +69,6 @@ export const register = async ({ name, email, password }) => {
     return { error: err.response.data.message || err.message };
   }
 };
-
 export const update = async ({ name, email, password }) => {
   try {
     const { _id, token } = getUserInfo();
@@ -94,5 +92,25 @@ export const update = async ({ name, email, password }) => {
   } catch (err) {
     console.log(err);
     return { error: err.response.data.message || err.message };
+  }
+};
+export const createOrder = async (order) => {
+  try {
+    const { token } = getUserInfo();
+    const response = await axios({
+      url: `${apiUrl}/api/orders`,
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${token}`,
+      },
+      data: order,
+    });
+    if (response.statusText !== 'Created') {
+      throw new Error(response.data.message);
+    }
+    return response.data;
+  } catch (err) {
+    return { error: err.response ? err.response.data.message : err.message };
   }
 };
