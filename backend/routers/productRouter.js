@@ -7,7 +7,7 @@ const productRouter = express.Router();
 productRouter.get(
   '/',
   expressAsyncHandler(async (req, res) => {    
-    const searchKeyword = req.query.searchKeyword
+    const searchKeywordCategory = req.query.searchKeyword
       ? {
           category: {
             $regex: req.query.searchKeyword,
@@ -15,7 +15,20 @@ productRouter.get(
           },
         }
       : {};
-    const products = await Product.find({ ...searchKeyword });    
+
+      const searchKeywordName = req.query.searchKeyword
+      ? {
+          name: {
+            $regex: req.query.searchKeyword,
+            $options: 'i',
+          },
+        }
+      : {};
+
+    const productsByCategory = await Product.find({ ...searchKeywordCategory });
+    const ProductsByName = await Product.find({ ...searchKeywordName });   
+    const products = Object.assign(productsByCategory,ProductsByName)
+    console.log(typeof(products))
     res.send(products);
   })
 );
