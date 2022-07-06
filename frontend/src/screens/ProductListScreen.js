@@ -2,7 +2,7 @@
 /* eslint-disable no-alert */
 import DashboardMenu from '../components/DashboardMenu';
 import { getProducts, createProduct, deleteProduct } from '../api';
-import { showLoading, hideLoading, rerender, showMessage } from '../utils';
+import { showLoading, hideLoading, rerender, showMessage, parseRequestUrl } from '../utils';
 
 const ProductListScreen = {
   after_render: () => {
@@ -35,7 +35,8 @@ const ProductListScreen = {
     });
   },
   render: async () => {
-    const products = await getProducts();
+    const { value } = parseRequestUrl();
+    const products = await getProducts({ searchKeyword: value });
     return `
     <div class="dashboard">
     ${DashboardMenu.render({ selected: 'products' })}
