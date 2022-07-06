@@ -563,3 +563,55 @@ ul.categories {
   margin-bottom: 1rem;
   padding-bottom: 1rem;
 }
+
+
+/* Media Queries */
+
+@media all and (max-width: 800px) {
+  
+  .brand a {
+    font-weight: bold;
+    font-size: 2rem;
+    padding-left: .5rem;
+  }
+
+
+}
+
+@media all and (max-width: 600px) {
+  
+  .brand a {
+    font-weight: bold;
+    font-size: 1.25rem;
+    padding-left: .25rem;
+    display: none;
+  }
+  
+  .search {
+    width: 50%;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  form.search-form button {
+    float: left;
+    width: 40px;
+    background: #f0c040;
+  
+    border-left: none;
+    cursor: pointer;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+
+  header div:last-child {
+    width: 36%;
+    padding-left: 0;
+    font-size: 1.3rem;
+  }
+
+  header div:last-child a {
+    padding:0
+  }
+
+}
