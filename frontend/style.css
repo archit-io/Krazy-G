@@ -586,22 +586,20 @@ ul.categories {
     padding-left: .25rem;
     display: none;
   }
+
+  .brand button {
+    font-size: 2rem;
+    padding: 0.25rem;
+  }
   
   .search {
-    width: 50%;
+    width:58%;
     padding-left: 0;
     padding-right: 0;
   }
 
   form.search-form button {
-    float: left;
-    width: 40px;
-    background: #f0c040;
-  
-    border-left: none;
-    cursor: pointer;
-    border-top-left-radius: 0;
-    border-bottom-left-radius: 0;
+    width: 12%;
   }
 
   header div:last-child {
@@ -613,5 +611,11 @@ ul.categories {
   header div:last-child a {
     padding:0
   }
+
+}
+
+@media all and (max-width: 600px) {
+
+
 
 }
