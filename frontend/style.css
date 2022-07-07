@@ -642,11 +642,11 @@ ul.categories {
   header div:last-child {
     width: 100px;
     font-size: .75rem;
-    padding-left: 2.5px;
+    padding-left: 1px;
   }
 
   header div:last-child a {
-    padding-left:0
+    padding-left:.25
   }
 
 }
