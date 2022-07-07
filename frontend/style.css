@@ -617,7 +617,7 @@ ul.categories {
 
   header div:last-child a {
     padding: 0;
-    padding-left:0.5px
+    padding-left:10px
   }
 
 }
@@ -646,7 +646,7 @@ ul.categories {
   }
 
   header div:last-child a {
-    padding-left:0.25px
+    padding-left:2px
   }
 
 }
