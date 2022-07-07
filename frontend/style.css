@@ -650,3 +650,21 @@ ul.categories {
   }
 
 }
+
+
+@media all and (max-width: 375px) {
+
+  .search {
+    width: 35%;
+  }
+  
+  header div:last-child {
+    font-size: .75rem;
+    padding-left: 1px;
+  }
+
+  header div:last-child a {
+    padding-left: 0 0 0 .25px
+  }
+
+}
