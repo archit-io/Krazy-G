@@ -654,8 +654,12 @@ ul.categories {
 
 @media all and (max-width: 375px) {
 
+  .brand {
+    width: 60px;
+  }
+
   .search {
-    width: 35%;
+    width: 45%;
   }
   
   header div:last-child {
@@ -667,4 +671,14 @@ ul.categories {
     padding-left: 0 0 0 .25px
   }
 
+  form.search-form button {
+    width: 30px;
+  }
+
+}
+
+@media all and (max-width: 345px) {
+  form.search-form input[type='text'] {    
+    width: 60%;
+  }
 }
