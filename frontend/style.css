@@ -580,42 +580,73 @@ ul.categories {
 
 @media all and (max-width: 600px) {
   
+  header {
+    justify-content: space-between;
+  }
+
+  .brand {
+    width: 90px;
+  }
+  
   .brand a {
     font-weight: bold;
-    font-size: 1.25rem;
+    font-size: 1rem;
     padding-left: .25rem;
-    display: none;
   }
 
   .brand button {
-    font-size: 2rem;
+    font-size: 1.75rem;
     padding: 0.25rem;
   }
   
   .search {
-    width:58%;
+    width:auto;
     padding-left: 0;
     padding-right: 0;
   }
 
-  form.search-form button {
-    width: 12%;
+  form.search-form {
+    height: 20px;
   }
 
   header div:last-child {
-    width: 36%;
-    padding-left: 0;
-    font-size: 1.3rem;
+    width: 140px;
+    font-size: 1rem;
+    padding-left: 5px;
   }
 
   header div:last-child a {
-    padding:0
+    padding: 0;
+    padding-left:0.5px
   }
 
 }
 
-@media all and (max-width: 600px) {
+@media all and (max-width: 400px) {
 
+  .brand {
+    width: 70px;
+  }
+  
+  .brand a {
+    font-weight: bold;
+    font-size: .85rem;
+    padding-left: .25rem;
+  }
 
+  .brand button {
+    font-size: 1.25rem;
+    padding: 0.25rem;
+  }
+
+  header div:last-child {
+    width: 100px;
+    font-size: .75rem;
+    padding-left: 2.5px;
+  }
+
+  header div:last-child a {
+    padding-left:0.25px
+  }
 
 }
