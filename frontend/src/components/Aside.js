@@ -7,14 +7,14 @@ const Aside = {
     <div class="aside-body">
       <ul class="categories">
         <li>
-          <a href="/#/?q=shirt"
-            >Shirts
+          <a href="/#/?q=pc"
+            >PC
             <span><i class="fa fa-chevron-right"></i></span>
           </a>
         </li>
         <li>
-          <a href="/#/?q=pant"
-            >Pants
+          <a href="/#/?q=playstation"
+            >PlayStation
             <span><i class="fa fa-chevron-right"></i></span>
           </a>
         </li> 
