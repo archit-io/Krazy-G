@@ -10,11 +10,11 @@ const Header = {
     <button id="aside-open-button">
       &#9776;
     </button>
-    <a href="/#/">E-Mart</a>
+    <a href="/#/">Krazy-G</a>
   </div>
   <div class="search">
     <form class="search-form"  id="search-form">
-      <input type="text" name="q" id="q" value="${value || ''}" /> 
+      <input type="text" name="q" id="q" value="${value || ''}" placeholder="PC, MAC AND CONSOLE GAMES"/> 
       <button type="submit"><i class="fa fa-search"></i></button>
     </form>        
   </div>
