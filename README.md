@@ -56,7 +56,9 @@ This web application is built using vanilla JavaScript. The server is built usin
 Place an .env file in the root folder with the following variables:
 
 JWT_SECRET=any-random-and-secure-string
+
 PAYPAL_CLIENT_ID=your-paypal-client-id-fo-rdevelopement-mode
+
 MONGODB_URL=your-mongodb-connection-uri
 
 
