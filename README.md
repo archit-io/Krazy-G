@@ -1,4 +1,4 @@
-# Krazy-G Games
+# Krazy-G
 A full stack E-Commerce application where you can purchase games for PC and PlayStation. It is a non commercial application that I have created for my portfolio.  
 
 **Link to project:** https://emart-ecommerce-app.herokuapp.com/
