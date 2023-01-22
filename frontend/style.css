@@ -59,7 +59,7 @@ button.primary {
 .overlay > div {
   background-color: #ffffff;
   color: #000000;
-  border-radius: 0.5rem;
+  /* border-radius: 0.5rem; */
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -209,7 +209,7 @@ footer {
 }
 .details-action {
   border: 0.1rem #808080 solid;
-  border-radius: 0.5rem;
+  /* border-radius: 0.5rem; */
   background-color: #f8f8f8;
   color: #000000;
   padding: 1rem;
@@ -339,7 +339,7 @@ footer {
 }
 .order-info > div {
   border: 0.1rem #c0c0c0 solid;
-  border-radius: 0.5rem;
+  /* border-radius: 0.5rem; */
   background-color: #fcfcfc;
   padding: 1rem;
   margin: 1rem;
@@ -353,7 +353,7 @@ footer {
 .order-action {
   flex: 1 1 20rem;
   border: 0.1rem #c0c0c0 solid;
-  border-radius: 0.5rem;
+  /* border-radius: 0.5rem; */
   background-color: #fcfcfc;
   padding: 1rem;
 }
@@ -459,7 +459,7 @@ td {
 .summary-items > li {
   border: 0.1rem #c0c0c0 solid;
   margin: 2rem;
-  border-radius: 0.5rem;
+  /* border-radius: 0.5rem; */
   flex: 1 1 20rem;
 }
 .summary-title {
