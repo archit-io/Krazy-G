@@ -44,21 +44,21 @@ A full stack E-Commerce application where you can purchase games for PC and Play
 
 
 
-How It's Made
-
 ## How It's Made:
 
 **Tech used:** HTML, CSS, JavaScript
 
 This web application is built using vanilla JavaScript. The server is built using Express.js. The database used is MongoDB. It is a single page application in which all pages are rendered in the index.html.
 
+
 ## How to run this project:
 
 Place an .env file in the root folder with the following variables:
 
-JWT_SECRET=anyrandomandsecurestring
-PAYPAL_CLIENT_ID=yourpaypalclientidfordevelopementmode
-MONGODB_URL=mongodb+srv://<username>:<password>@cluster0.oeqzdvi.mongodb.net/?retryWrites=true&w=majority
+JWT_SECRET=any-random-and-secure-string
+PAYPAL_CLIENT_ID=your-paypal-client-id-fo-rdevelopement-mode
+MONGODB_URL=your-mongodb-connection-uri
+
 
 ## Optimizations
 
