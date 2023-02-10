@@ -14,9 +14,9 @@ export const getProducts = async ({ searchKeyword = '' }) => {
         'Content-Type': 'application/json',
       },
     });
-    if (response.statusText !== 'OK') {
-      throw new Error(response.data.message);
-    }
+    // if (response.statusText !== 'OK') {
+    //   throw new Error(response.data.message);
+    // }
     return response.data;
   } catch (err) {
     console.log(err);
