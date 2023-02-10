@@ -6,8 +6,9 @@ export const getProducts = async ({ searchKeyword = '' }) => {
   try {
     let queryString = '?';
     if (searchKeyword) queryString += `searchKeyword=${searchKeyword}&`;
+    console.log(apiUrl);
     const response = await axios({
-      url: `${apiUrl}/api/products${queryString}`,
+      url: `https://krazyg.cyclic.app/api/products${queryString}`,
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
