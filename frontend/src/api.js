@@ -33,9 +33,9 @@ export const getProduct = async (id) => {
         'Content-Type': 'application/json',
       },
     });
-    if (response.statusText !== 'OK') {
-      throw new Error(response.data.message);
-    }
+    // if (response.statusText !== 'OK') {
+    //   throw new Error(response.data.message);
+    // }
     return response.data;
   } catch (err) {
     console.log(err);
@@ -53,9 +53,9 @@ export const createProduct = async () => {
         Authorization: `Bearer ${token}`,
       },
     });
-    if (response.statusText !== 'Created') {
-      throw new Error(response.data.message);
-    }
+    // if (response.statusText !== 'Created') {
+    //   throw new Error(response.data.message);
+    // }
     return response.data;
   } catch (err) {
     return { error: err.response.data.message || err.message };
@@ -74,9 +74,9 @@ export const createReview = async (productId, review) => {
       },
       data: review,
     });
-    if (response.statusText !== 'Created') {
-      throw new Error(response.data.message);
-    }
+    // if (response.statusText !== 'Created') {
+    //   throw new Error(response.data.message);
+    // }
     return response.data;
   } catch (err) {
     return { error: err.response.data.message || err.message };
@@ -95,9 +95,9 @@ export const deleteProduct = async (productId) => {
         Authorization: `Bearer ${token}`,
       },
     });
-    if (response.statusText !== 'OK') {
-      throw new Error(response.data.message);
-    }
+    // if (response.statusText !== 'OK') {
+    //   throw new Error(response.data.message);
+    // }
     return response.data;
   } catch (err) {
     return { error: err.response.data.message || err.message };
@@ -116,9 +116,9 @@ export const updateProduct = async (product) => {
       },
       data: product,
     });
-    if (response.statusText !== 'OK') {
-      throw new Error(response.data.message);
-    }
+    // if (response.statusText !== 'OK') {
+    //   throw new Error(response.data.message);
+    // }
     return response.data;
   } catch (err) {
     return { error: err.response.data.message || err.message };
@@ -137,9 +137,10 @@ export const uploadProductImage = async (formData) => {
       },
       data: formData,
     });
-    if (response.statusText !== 'Created') {
-      throw new Error(response.data.message);
-    } else {
+    // if (response.statusText !== 'Created') {
+    //   throw new Error(response.data.message);
+    // } 
+     {
       return response.data;
     }
   } catch (err) {
@@ -160,9 +161,9 @@ export const signin = async ({ email, password }) => {
         password,
       },
     });
-    if (response.statusText !== 'OK') {
-      throw new Error(response.data.message);
-    }
+    // if (response.statusText !== 'OK') {
+    //   throw new Error(response.data.message);
+    // }
     return response.data;
   } catch (err) {
     console.log(err);
@@ -183,9 +184,9 @@ export const register = async ({ name, email, password }) => {
         password,
       },
     });
-    if (response.statusText !== 'OK') {
-      throw new Error(response.data.message);
-    }
+    // if (response.statusText !== 'OK') {
+    //   throw new Error(response.data.message);
+    // }
     return response.data;
   } catch (err) {
     console.log(err);
@@ -208,9 +209,9 @@ export const update = async ({ name, email, password }) => {
         password,
       },
     });
-    if (response.statusText !== 'OK') {
-      throw new Error(response.data.message);
-    }
+    // if (response.statusText !== 'OK') {
+    //   throw new Error(response.data.message);
+    // }
     return response.data;
   } catch (err) {
     console.log(err);
@@ -230,9 +231,9 @@ export const createOrder = async (order) => {
       },
       data: order,
     });
-    if (response.statusText !== 'Created') {
-      throw new Error(response.data.message);
-    }
+    // if (response.statusText !== 'Created') {
+    //   throw new Error(response.data.message);
+    // }
     return response.data;
   } catch (err) {
     return { error: err.response ? err.response.data.message : err.message };
@@ -249,9 +250,9 @@ export const getOrders = async () => {
         Authorization: `Bearer ${token}`,
       },
     });
-    if (response.statusText !== 'OK') {
-      throw new Error(response.data.message);
-    }
+    // if (response.statusText !== 'OK') {
+    //   throw new Error(response.data.message);
+    // }
     return response.data;
   } catch (err) {
     console.log(err);
@@ -269,9 +270,9 @@ export const deleteOrder = async (orderId) => {
         Authorization: `Bearer ${token}`,
       },
     });
-    if (response.statusText !== 'OK') {
-      throw new Error(response.data.message);
-    }
+    // if (response.statusText !== 'OK') {
+    //   throw new Error(response.data.message);
+    // }
     return response.data;
   } catch (err) {
     return { error: err.response.data.message || err.message };
@@ -287,9 +288,9 @@ export const getOrder = async (id) => {
         Authorization: `Bearer ${token}`,
       },
     });
-    if (response.statusText !== 'OK') {
-      throw new Error(response.data.message);
-    }
+    // if (response.statusText !== 'OK') {
+    //   throw new Error(response.data.message);
+    // }
     return response.data;
   } catch (err) {
     return { error: err.message };
@@ -305,9 +306,9 @@ export const getMyOrders = async () => {
         Authorization: `Bearer ${token}`,
       },
     });
-    if (response.statusText !== 'OK') {
-      throw new Error(response.data.message);
-    }
+    // if (response.statusText !== 'OK') {
+    //   throw new Error(response.data.message);
+    // }
     return response.data;
   } catch (err) {
     return { error: err.response ? err.response.data.message : err.message };
@@ -320,9 +321,9 @@ export const getPaypalClientId = async () => {
       'Content-Type': 'application/json',
     },
   });
-  if (response.statusText !== 'OK') {
-    throw new Error(response.data.message);
-  }
+  // if (response.statusText !== 'OK') {
+  //   throw new Error(response.data.message);
+  // }
   return response.data.clientId;
 };
 
@@ -338,9 +339,9 @@ export const payOrder = async (orderId, paymentResult) => {
       },
       data: paymentResult,
     });
-    if (response.statusText !== 'OK') {
-      throw new Error(response.data.message);
-    }
+    // if (response.statusText !== 'OK') {
+    //   throw new Error(response.data.message);
+    // }
     return response.data;
   } catch (err) {
     return { error: err.response ? err.response.data.message : err.message };
@@ -357,9 +358,9 @@ export const deliverOrder = async (orderId) => {
         Authorization: `Bearer ${token}`,
       },
     });
-    if (response.statusText !== 'OK') {
-      throw new Error(response.data.message);
-    }
+    // if (response.statusText !== 'OK') {
+    //   throw new Error(response.data.message);
+    // }
     return response.data;
   } catch (err) {
     return { error: err.response ? err.response.data.message : err.message };
@@ -375,11 +376,11 @@ export const getSummary = async () => {
         'content-type': 'application/json',
       },
     });
-    if (response.statusText !== 'OK') {
-      throw new Error(response.data.message);
-    } else {
+    // if (response.statusText !== 'OK') {
+    //   throw new Error(response.data.message);
+    // } else {
       return response.data;
-    }
+    
   } catch (err) {
     return { error: err.response ? err.response.data.message : err.message };
   }
