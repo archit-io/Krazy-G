@@ -7,4 +7,4 @@
 
   export const apiUrl = document.location.href.startsWith('https://krazyg.cyclic.app')
   ? 'https://krazyg.cyclic.app'
-  : '';
+  : 'https://krazyg.cyclic.app';
