@@ -15,6 +15,6 @@ const upload = multer({ storage });
 const uploadRouter = express.Router();
 
 uploadRouter.post('/', isAuth, isAdmin, upload.single('image'), (req, res) => {
-  res.status(201).send({ image: `https://krazyg.cyclic.app/${req.file.path.replace(/\\/g, '/')}` });
+  res.status(201).send({ image: `http://localhost:5000/${req.file.path.replace(/\\/g, '/')}` });
 });
 export default uploadRouter;
