@@ -1,4 +1,4 @@
-# Krazy-G
+<img width="958" height="436" alt="image" src="https://github.com/user-attachments/assets/f4ccf1c5-41de-4c33-bc97-9df5e6519a06" /># Krazy-G
 A full stack E-Commerce application where you can purchase games for PC and PlayStation. It is a non commercial application that I have created for my portfolio.  
 
 **Link to project:** https://emart-ecommerce-app.herokuapp.com/
@@ -8,7 +8,7 @@ A full stack E-Commerce application where you can purchase games for PC and Play
 
 **Home page:**
 
-![Model](https://i.ibb.co/LCyq3RQ/home.png)
+![Model](https://i.ibb.co/FLLRgqc0/homepage.jpg)
 
 
 
@@ -81,3 +81,4 @@ It is planned to add multiple other features to make this app more useful to the
 ## Lessons Learned:
 
 This project helped me learn to build a single page application using vanilla JavaScript.
+
